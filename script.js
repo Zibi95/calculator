@@ -1,12 +1,14 @@
 "use strict";
 const operationEl = document.querySelector(".operation");
 const buttons = document.querySelectorAll(".buttons");
+
 const click = (e) => {
   e.target.classList.toggle("btn-click");
   setTimeout(() => {
     e.target.classList.toggle("btn-click");
   }, 100);
 };
+
 buttons.forEach((el) =>
   el.addEventListener("click", function (e) {
     if (e.target.classList.contains("buttons")) return;
@@ -25,6 +27,9 @@ buttons.forEach((el) =>
 
 function screenDisplay(content) {
   if (operationEl.innerText === "0") operationEl.innerText = "";
+  if (operationEl.innerText === "" && content === ".") {
+    operationEl.innerText = "0";
+  }
   operationEl.innerText += content;
 }
 

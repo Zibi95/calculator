@@ -52,6 +52,10 @@ body {
   transition: scale 0.2s;
 }
 
+.btn:hover {
+  background-color: rgb(219, 206, 182);
+}
+
 .btn-click {
   scale: 0.95;
   box-shadow: none;
